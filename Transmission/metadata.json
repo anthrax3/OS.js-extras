@@ -1,0 +1,28 @@
+{
+  "className":  "ApplicationTransmission",
+  "name":       "Transmission",
+  "mime":       null,
+  "icon":       "status/network-transmit.png",
+  "category":   "network",
+  "mime":       [
+    "application\\/x-bittorrent",
+    "application\\/x-scheme-handler\\/magnet",
+    "application\\/octet-stream"
+  ],
+  "build":      {
+    "copy": [
+      "metadata.json",
+      "scheme.html",
+      "main.css",
+      "main.js",
+      "vendor/webtorrent/webtorrent.min.js",
+      "vendor/moment/moment.min.js"
+    ]
+  },
+  "preload":    [
+    {"src": "vendor/webtorrent/webtorrent.min.js", "type": "javascript"},
+    {"src": "vendor/moment/moment.min.js", "type": "javascript"},
+    {"src": "main.js", "type": "javascript"},
+    {"src": "main.css", "type": "stylesheet"}
+  ]
+}

@@ -1,0 +1,52 @@
+<application-window data-id="TransmissionWindow">
+
+    <gui-vbox>
+        <!-- MENU BAR -->
+        <gui-vbox-container data-grow="0" data-shrink="1" data-basis="auto">
+          <gui-menu-bar data-id="Menubar">
+
+            <gui-menu-bar-entry data-label="LBL_FILE">
+              <gui-menu data-id="SubmenuFile">
+                <gui-menu-entry data-id="MenuOpen" data-label="LBL_OPEN"></gui-menu-entry>
+                <gui-menu-entry data-id="MenuOpenUrl" data-label="Open URL.."></gui-menu-entry>
+                <gui-menu-entry data-id="MenuNew" data-label="New"></gui-menu-entry>
+                <gui-menu-entry data-id="MenuStartAll" data-label="Start All"></gui-menu-entry>
+                <gui-menu-entry data-id="MenuPauseAll" data-label="Pause All"></gui-menu-entry>
+                <gui-menu-entry data-id="MenuClose" data-label="LBL_CLOSE"></gui-menu-entry>
+              </gui-menu>
+            </gui-menu-bar-entry>
+
+            <gui-menu-bar-entry data-label="Edit">
+              <gui-menu data-id="SubmenuEdit">
+                <gui-menu-entry data-id="SelectAll" data-label="Select All"></gui-menu-entry>
+                <gui-menu-entry data-id="DeselectAll" data-label="Deselect All"></gui-menu-entry>
+                <gui-menu-entry data-id="Preferences" data-label="Preferences"></gui-menu-entry>
+              </gui-menu>
+            </gui-menu-bar-entry>
+
+            <gui-menu-bar-entry data-label="Torrent" data-id="MenuTorrent">
+              <gui-menu data-id="SubmenuTorrent">
+                <gui-menu-entry data-id="TorrentProperties" data-label="Properties"></gui-menu-entry>
+                <gui-menu-entry data-id="TorrentOpenFolder" data-label="Open Folder"></gui-menu-entry>
+                <gui-menu-entry data-id="TorrentStart" data-label="Start"></gui-menu-entry>
+                <gui-menu-entry data-id="TorrentStartNow" data-label="Start Now"></gui-menu-entry>
+              </gui-menu>
+            </gui-menu-bar-entry>
+
+          </gui-menu-bar>
+        </gui-vbox-container>
+
+        <!-- CONTENT -->
+        <gui-vbox-container data-grow="1" data-shrink="0" data-basis="auto" data-fill="true">
+            <gui-container data-id="TransfersContainer">
+            </gui-container>
+        </gui-vbox-container>
+
+
+        <!-- STATUSBAR -->
+        <gui-vbox-container data-grow="0" data-shrink="1" data-basis="auto">
+          <gui-statusbar data-id="Statusbar"></gui-statusbar>
+        </gui-vbox-container>
+      </gui-vbox>
+
+</application-window>
