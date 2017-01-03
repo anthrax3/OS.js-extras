@@ -1,7 +1,7 @@
 (function() {
   var portRange = [26490, 26999];
   var portIndex = portRange[0];
-  var serverPort= 8080;
+  var serverPort= parseInt(process.argv[2],10) || 8080;
   var instances = {};
 
   var fs = require('fs');
@@ -41,9 +41,11 @@
     var p = path.join(__dirname, 'server.js');
     var child = spawn('node', [p, portIndex, uid], {
       //uid: uid,
-      detached: true,
-      stdio: [ 'ignore', out, err ]
+      detached: true/*,
+      stdio: [ 'ignore', out, err ]*/
     });
+
+    child.stdout.pipe(process.stdout);
 
     console.log('---', 'Created instance pid', child.pid, '@', portIndex, 'on user', uid);
 

@@ -1,7 +1,7 @@
 /*!
  * OS.js - JavaScript Operating System
  *
- * Copyright (c) 2011-2015, Anders Evenrud <andersevenrud@gmail.com>
+ * Copyright (c) 2011-2017, Anders Evenrud <andersevenrud@gmail.com>
  * All rights reserved.
  * 
  * Redistribution and use in source and binary forms, with or without
@@ -65,15 +65,15 @@
       }
     }
 
-    this._addHook('resized', function() {
+    this._on('resized', function() {
       resize();
     });
 
-    this._addHook('maximize', function() {
+    this._on('maximize', function() {
       resize();
     });
 
-    this._addHook('restore', function() {
+    this._on('restore', function() {
       resize();
     });
 

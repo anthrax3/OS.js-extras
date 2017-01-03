@@ -7,6 +7,7 @@
   var path = require('path');
 
   var sessions = {};
+
   var uid;
   var userinfo = {
     dir: process.env.HOME,
@@ -69,6 +70,7 @@
     }
   };
 
+  /*
   setInterval(function() {
     Object.keys(sessions).forEach(function(key) {
       var term = sessions[key];
@@ -82,6 +84,7 @@
       }
     });
   }, 1000);
+  */
 
   io.on('connection', function (socket) {
     console.log('Incoming connection');
@@ -113,15 +116,6 @@
       var term = sessions[id];
       if ( term ) {
         term.term.write(data);
-      }
-    });
-
-    socket.on('ping', function (id) {
-      var now = Date.now();
-      var term = sessions[id];
-      if ( term ) {
-        console.log('<<<', 'ping', id, now, '<-', term.ping);
-        term.ping = now;
       }
     });
 

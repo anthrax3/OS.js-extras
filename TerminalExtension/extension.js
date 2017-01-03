@@ -1,7 +1,7 @@
 /*!
  * OS.js - JavaScript Operating System
  *
- * Copyright (c) 2011-2015, Anders Evenrud <andersevenrud@gmail.com>
+ * Copyright (c) 2011-2017, Anders Evenrud <andersevenrud@gmail.com>
  * All rights reserved.
  * 
  * Redistribution and use in source and binary forms, with or without
@@ -219,12 +219,6 @@
       }
     }, 1000);
 
-    this.pingInterval = setInterval(function() {
-      if ( self.socket && self.id ) {
-        self.socket.emit('ping', self.id);
-      }
-    }, 30000);
-
     term.on('data', function(data) {
       if ( self.socket && self.id ) {
         self.socket.emit('data', self.id, data);
@@ -286,6 +280,7 @@
           if ( recieved <= 2 ) {
             return;
           }
+          return;
 
           var term = sessions[id];
           if ( term ) {

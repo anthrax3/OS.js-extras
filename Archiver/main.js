@@ -1,7 +1,7 @@
 /*!
  * OS.js - JavaScript Operating System
  *
- * Copyright (c) 2011-2015, Anders Evenrud <andersevenrud@gmail.com>
+ * Copyright (c) 2011-2017, Anders Evenrud <andersevenrud@gmail.com>
  * All rights reserved.
  * 
  * Redistribution and use in source and binary forms, with or without
@@ -147,6 +147,10 @@
   };
 
   ApplicationArchiverWindow.prototype.renderProgress = function(filename, index, total) {
+    if ( !this._scheme ) {
+      return;
+    }
+
     var p = this._scheme.find(this, 'Progress');
     var s = this._scheme.find(this, 'Statusbar');
 
@@ -162,6 +166,10 @@
   };
 
   ApplicationArchiverWindow.prototype.renderArchive = function(entries, root) {
+    if ( !this._scheme ) {
+      return;
+    }
+
     var view = this._scheme.find(this, 'FileView');
     var rows = [];
 
@@ -201,9 +209,9 @@
       });
 
       view.set('columns', [
-        {label: 'Name', basis: '100px', grow: 1, shrink: 1},
-        {label: 'Type', basis: '100px', grow: 0, shrink: 0, textalign: 'right'},
-        {label: 'Size', basis: '60px', grow: 0, shrink: 0, textalign: 'right'}
+        {label: 'Name', size: '100px'},
+        {label: 'Type', size: '100px', textalign: 'right'},
+        {label: 'Size', size: '60px', textalign: 'right'}
       ]);
     }
 
